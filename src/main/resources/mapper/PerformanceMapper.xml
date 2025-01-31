@@ -1,0 +1,8 @@
+<insert id="batchInsert" parameterType="java.util.List">
+    INSERT INTO performance (employee_id, score, grade, performance_time, create_time, update_time, comment)
+    VALUES
+    <foreach collection="list" item="item" separator=",">
+        (#{item.employeeId}, #{item.score}, #{item.grade}, #{item.performanceTime}, 
+         #{item.createTime}, #{item.updateTime}, #{item.comment})
+    </foreach>
+</insert> 
